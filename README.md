@@ -8,7 +8,7 @@
 
 <!--$\bf{\large{\color{#1187cf}SmartHome - CULISO}}$</span>-->
 
-# 📜 Implement
+# 🌐 Implement
 <div align=left>
 
   ## 챗봇 이용
@@ -24,9 +24,6 @@
 </div>
 
 <hr>
-
-# 🌐 Connection
-🔗 [큐리소 바로가기](https://culiso.duckdns.org/Intro)
 
 # 📚 Environments  
 <div align=left>  
