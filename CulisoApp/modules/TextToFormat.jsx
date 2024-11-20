@@ -1,30 +1,42 @@
 import DevicesData from "./DevicesData";
 
-
 const TextToFormat = (msg) => {
     // 공백 제거하고 소문자로 변환
     const str = msg.replace(/\s+/g, '').toLowerCase();
 
-    switch(str) {
+    // 접두사 목록 정의
+    const validPrefixes = ['큐리야', '규리야', '큐리아', '규리아'];
+
+    // 접두사와 명령어 분리
+    const prefix = validPrefixes.find((prefix) => str.startsWith(prefix));
+    if (!prefix) return null; // 접두사가 없으면 실행하지 않음
+
+    const command = str.slice(prefix.length); // 접두사를 제거한 나머지 명령어
+
+    switch (command) {
         case "침실조명켜줘":
+        case "침실불켜줘":
             const bedroomDeviceOn = DevicesData.find(device => device.name === '침실 조명');
             if (bedroomDeviceOn && bedroomDeviceOn.flag === true) return;
             if (bedroomDeviceOn) bedroomDeviceOn.flag = true;
             return 'f';
 
         case "침실조명꺼줘":
+        case "침실불꺼줘":
             const bedroomDeviceOff = DevicesData.find(device => device.name === '침실 조명');
             if (bedroomDeviceOff && bedroomDeviceOff.flag === false) return;
             if (bedroomDeviceOff) bedroomDeviceOff.flag = false;
             return 'f';
 
         case "거실조명켜줘":
+        case "거실불켜줘":
             const livingRoomDeviceOn = DevicesData.find(device => device.name === '거실 조명');
             if (livingRoomDeviceOn && livingRoomDeviceOn.flag === true) return;
             if (livingRoomDeviceOn) livingRoomDeviceOn.flag = true;
             return 'b';
 
         case "거실조명꺼줘":
+        case "거실불꺼줘":
             const livingRoomDeviceOff = DevicesData.find(device => device.name === '거실 조명');
             if (livingRoomDeviceOff && livingRoomDeviceOff.flag === false) return;
             if (livingRoomDeviceOff) livingRoomDeviceOff.flag = false;
@@ -43,12 +55,20 @@ const TextToFormat = (msg) => {
             return 'g';
 
         case "커튼켜줘":
+        case "커튼걷어줘":
+        case "커튼올려줘":
+        case "커튼열어줘":
+        case "커튼치워줘":
             const curtainDeviceOn = DevicesData.find(device => device.name === '커튼');
             if (curtainDeviceOn && curtainDeviceOn.flag === true) return;
             if (curtainDeviceOn) curtainDeviceOn.flag = true;
             return 'i';
 
         case "커튼꺼줘":
+        case "커튼닫아줘":
+        case "커튼내려줘":
+        case "커튼닫아줘":
+        case "커튼쳐줘":   
             const curtainDeviceOff = DevicesData.find(device => device.name === '커튼');
             if (curtainDeviceOff && curtainDeviceOff.flag === false) return;
             if (curtainDeviceOff) curtainDeviceOff.flag = false;
