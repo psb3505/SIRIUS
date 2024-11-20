@@ -231,6 +231,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    marginLeft: 10,
     padding: 10,
     boxSizing: "border-box",
     borderRadius: 15,
