@@ -67,7 +67,6 @@ const TextToFormat = (msg) => {
         case "커튼꺼줘":
         case "커튼닫아줘":
         case "커튼내려줘":
-        case "커튼닫아줘":
         case "커튼쳐줘":   
             const curtainDeviceOff = DevicesData.find(device => device.name === '커튼');
             if (curtainDeviceOff && curtainDeviceOff.flag === false) return;
