@@ -330,11 +330,14 @@ const ContentUpload = () => {
             // 이미지 리사이즈 처리 및 FormData 추가
             for (const [index, file] of relatedFiles.entries()) {
                 try {
+                    // 파일의 uri를 조건부로 설정: file.uri가 없으면 file.fileUrl 사용
+                    const fileURI = file.uri ? file.uri : file.fileUrl;
+
                     // 파일의 타입에 따라 포맷 설정
                     const format = file.type === 'image/png' ? 'PNG' : 'JPEG';
 
                     const resizedImage = await ImageResizer.createResizedImage(
-                        file.uri,    // 원본 이미지 URI
+                        fileURI,    // 원본 이미지 URI
                         800,         // 리사이즈할 너비
                         800,         // 리사이즈할 높이
                         format,      // 이미지 포맷 ('JPEG' 또는 'PNG')
@@ -385,10 +388,13 @@ const ContentUpload = () => {
             // 이미지 리사이즈 처리 및 FormData 추가
             for (const [index, file] of relatedFiles.entries()) {
                 try {
+                    // 파일의 uri를 조건부로 설정: file.uri가 없으면 file.fileUrl 사용
+                    const fileURI = file.uri ? file.uri : file.fileUrl;
+
                     const format = file.type === 'image/png' ? 'PNG' : 'JPEG';
 
                     const resizedImage = await ImageResizer.createResizedImage(
-                        file.uri,
+                        fileURI,
                         360,
                         360,
                         format,
