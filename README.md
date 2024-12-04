@@ -23,8 +23,6 @@
   <img src="https://github.com/user-attachments/assets/2661b40a-0592-4f15-ae1c-1ad4130fb782">
 </div>
 
-<hr>
-
 # 📚 Environments  
 <div align=left>  
   <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
