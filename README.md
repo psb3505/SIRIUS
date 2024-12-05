@@ -8,6 +8,11 @@
 
 <!--$\bf{\large{\color{#1187cf}SmartHome - CULISO}}$</span>-->
 
+<h3>culiso는 Bluetooth로 가전제품(BLE 키트)에 연결하여, AI 챗봇이나 수동 방식으로 제어하고, 사용자 간 정보와 노하우를 커뮤니티 게시판을 통해 공유할 수 있는 플랫폼입니다.</h3>
+<h3>챗봇 대화 기록과 커뮤니티 관련 기능을 처리하는 Spring Boot 기반으로 개발한 REST 백앤드 서버로 구현되었으며, Docker Container 위에서 배포될 수 있게 구성하였습니다.</h3>
+
+<br>
+
 # 🌐 Implement
 <div align=left>
 
