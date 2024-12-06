@@ -28,7 +28,7 @@
   <img src="https://github.com/user-attachments/assets/2661b40a-0592-4f15-ae1c-1ad4130fb782">
 
   ## 음성 인식 챗봇 이용
-  <img src="https://github.com/user-attachments/assets/745f4e37-8ee0-4817-97c0-b3d07cbf5830">
+  <img src="https://github.com/user-attachments/assets/c6c58aad-f324-4b51-9bc2-932d7b624b0d">
 </div>
 
 # 📚 Environments  
