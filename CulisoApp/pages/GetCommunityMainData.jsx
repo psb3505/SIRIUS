@@ -44,16 +44,24 @@ const CommunityContentsLeft = ({ board, truncateText }) => {
 };
 
 const CommunityContentsRight = ({ board, ENDPOINT }) => {
-    return (
-        board.file_url && board.file_name ? (
-            <View style={styles.communityContentsRight}>
-                <Image
-                    source={{ uri: ENDPOINT + board.file_url + board.file_name }}
-                    style={styles.image}
-                />
-            </View>
-        ) : null
-    );
+  const [loading, setLoading] = useState(true);
+
+  return (
+      board.file_url && board.file_name ? (
+          <View style={styles.communityContentsRight}>
+              {loading && (
+                  <View style={styles.loadingIndicator}>
+                      <Text>로딩 중...</Text>
+                  </View>
+              )}
+              <Image
+                  source={{ uri: ENDPOINT + board.file_url + board.file_name }}
+                  style={styles.image}
+                  onLoad={() => setLoading(false)}
+              />
+          </View>
+      ) : null
+  );
 };
 
 const AllContents = ({ board_id }) => {
@@ -77,8 +85,6 @@ const AllContents = ({ board_id }) => {
   }, [isFocused, board_id]);  // isFocused와 board_id를 의존성 배열에 추가
 
   const ContentsValue = (board_id) => {
-    console.log("Requested board_id:", board_id);  // board_id 값을 콘솔에 출력
-
     axios.post(ENDPOINT + 'user/contentListValue', { board_id }, {  // board_id 전송
         headers: {
             "Content-Type": "application/json",
@@ -101,8 +107,6 @@ const AllContents = ({ board_id }) => {
   // 조회수 카운트
   const viewsCount = async (contents_num) => {
     try {
-      console.log("Requested board_id:", board_id);  // board_id 값을 콘솔에 출력
-
       const data = {
         contents_num: contents_num
     };
@@ -245,6 +249,10 @@ const styles = StyleSheet.create({
     height: 130,
     marginRight: 20,
     borderRadius: 15,
+  },
+  loadingIndicator: {
+    position: "absolute",
+    zIndex: 1,
   },
 });
 
