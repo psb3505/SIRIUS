@@ -58,6 +58,8 @@
   <br>
 </div>
 
+# ⚠️ Issue
+✔️ [이미지 리사이징 속도 개선](https://calico-dirigible-ae6.notion.site/17280a6e751d8013b5ebf8ee6e121cb9?pvs=4)
 
 # 💡 Links
 
